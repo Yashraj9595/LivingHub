@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LivingHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="icon" href="assets/LivingHub.png">
+</head>
+<body>
+    <header>
+        <!-- Navigation -->
+        <nav id="desktop-nav">
+            <div class="logo" onclick="location.href='index.html';">LivingHub</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="hostelListing.html">Hostel</a></li>
+                <li><a href="messListing.html">Mess</a></li>
+                <li><a href="#more-info">More-Info</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="auth-link"><a href="auth.html" id="auth-button">Sign Up / Login</a></li>
+            </ul>
+        </nav>
+
+        <nav id="hamburger-nav">
+            <div class="logo">Living Hub</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="menu-links">
+                    <ul>
+                        <li><a href="hostelListing.html" onclick="toggleMenu()">Hostel</a></li>
+                        <li><a href="messListing.html" onclick="toggleMenu()">Mess</a></li>
+                        <li><a href="#more-info" onclick="toggleMenu()">More-Info</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                        <li><a href="auth.html" onclick="toggleMenu()">Sign Up / Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    <section class="site-info" id="site-info">
+        <div class="info-text">
+            <h2 class="section-title">About LivingHub</h2>
+            <p class="section-text">Find the perfect hostel and mess facilities with LivingHub. Our platform uses advanced algorithms to match your preferences, budget, and location. Explore featured options with top-notch amenities. Guaranteed hassle-free experience.</p>
+        </div>
+        <div>
+            <img src="assets/HomePage.jpg" alt="LivingHub Website">
+        </div>
+    </section>
+    
+    <section class="featured-hostels" id="featured-hostels">
+        <h2 class="section-title">Featured Hostels</h2>
+        <div class="facilities-listing">
+            <div class="facility">
+                <img src="assets/hostel1.jpg" alt="DNYANRAJ BOYS HOSTEL">
+                <h3>DNYANRAJ BOYS HOSTEL</h3>
+                <p>Facilities: WiFi facilities, 3 students per 2 rooms, mess located on the ground floor.</p>
+            </div>
+            <div class="facility">
+                <img src="assets/hostel2.jpg" alt="Jai Boys Hostel">
+                <h3>Jai Boys Hostel</h3>
+                <p>Facilities: WiFi, washing machine, 24 hr RO water, study table, hot water.</p>
+            </div>
+            <div class="facility">
+                <img src="assets/hostel3.jpg" alt="Rajmata Girls Hostel">
+                <h3>Rajmata Girls Hostel</h3>
+                <p>Facilities: High-speed WiFi, comfortable beds, clean drinking water, washing machine.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="featured-mess" id="featured-mess">
+        <h2 class="section-title">Featured Mess</h2>
+        <div class="facilities-listing">
+            <div class="facility">
+                <img src="assets/mess1.jpg" alt="Mom's Kitchen">
+                <h3>Mom's Kitchen</h3>
+                <p>Facilities: Clean drinking water, both veg and non-veg options, daily side sweet dish.</p>
+            </div>
+            <div class="facility">
+                <img src="assets/mess2.jpg" alt="Gokul">
+                <h3>Gokul</h3>
+                <p>Facilities: Full vegetarian meals, two vegetables per plate, wide eating area, cool and clean water.</p>
+            </div>
+            <div class="facility">
+                <img src="assets/mess3.jpg" alt="Elite Space">
+                <h3>Elite Space</h3>
+                <p>Facilities: No rush, proper serving, fresh and hot food, big dining area.</p>
+            </div>
+        </div>   
+    </section>    
+
+    <section class="user-reviews" id="user-reviews">
+        <h2 class="section-title">What Our Users Say</h2>
+        <div class="review-container">
+            <div class="review">
+                <div class="user-info">
+                    <img src="assets/om_sinkar.jpg" alt="User 1">
+                    <h3>Om Sinkar</h3>
+                </div>
+                <p class="review-text">
+                    "LivingHub helped me find the 
+                    perfect hostel near my university. 
+                    The process was smooth, and the hostel facilities 
+                    exceeded my expectations!"</p>
+            </div>
+            <div class="review">
+                <div class="user-info">
+                    <img src="assets/prajwal-jadhav.jpg" alt="User 2">
+                    <h3>Prajwal Jadhav</h3>
+                </div>
+                <p class="review-text">
+                    "I'm so grateful for LivingHub! 
+                    They made finding a mess with my preferred 
+                    cuisine options a breeze. Highly recommended!"</p>
+            </div>
+            <div class="review">
+                <div class="user-info">
+                    <img src="assets/mohit-patil.jpg" alt="User 2">
+                    <h3>Mohit Patil</h3>
+                </div>
+                <p class="review-text">
+                    "Thanks to LivingHub, 
+                    I found a mess that offers the best vegetarian options. 
+                    The user reviews really guided me. Fantastic service!"</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="more-info" id="more-info">
+        <section class="how-it-works">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-text">Discover how LivingHub helps you find the best hostel and mess facilities in just a few easy steps.</p>
+            <div class="steps">
+                <div class="step">
+                    <h3>1. Sign Up</h3>
+                    <p>Create an account on LivingHub to get started.</p>
+                </div>
+                <div class="step">
+                    <h3>2. Set Preferences</h3>
+                    <p>Tell us your location, budget, and preferences.</p>
+                </div>
+                <div class="step">
+                    <h3>3. Explore Options</h3>
+                    <p>Discover a curated list of hostels and mess facilities matching your criteria.</p>
+                </div>
+                <div class="step">
+                    <h3>4. Connect with Providers</h3>
+                    <p>Contact the hostel or mess providers directly to finalize your booking.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="line"></div>
+        
+        <section class="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Q: How do I sign up for LivingHub?</h3>
+                <p>A: Click on the "Sign Up" button and follow the prompts to create your account.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q: Are there any fees for using LivingHub?</h3>
+                <p>A: No, LivingHub is a free platform for users.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q: How do I contact customer support?</h3>
+                <p>A: You can reach our customer support team via email at support@livinghub.com or through the contact form on our website.</p>
+            </div>
+        </section>
+    </section>
+    
+    <section id="contact">
+        <p class="section_text_p1">Get In Touch</p>
+        <h1 class="title">Contact Us</h1>
+        <div class="btn-container">
+            <button class="btn btn-color-2" onclick="toggleContactForm()">
+                Message</button>
+        </div>
+        <div id="contact-form-container" class="form-container">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email-ID:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="query" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-color-1">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 LivingHub. All rights reserved.</p>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a> |
+            <a href="#contact.html">Contact Us</a>
+        </p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

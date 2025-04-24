@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/LivingHub.png">
+</head>
+<body>
+    <header>
+        <nav id="desktop-nav">
+            <div class="logo" onclick="location.href='index.html';">LivingHub</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="hostelListing.html">Hostel</a></li>
+                <li><a href="messListing.html">Mess</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="auth-link"><a href="auth.html" id="auth-button">Sign Up / Login</a></li>
+            </ul>
+        </nav>
+
+        <nav id="hamburger-nav">
+            <div class="logo">LivingHub</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="menu-links">
+                    <ul>
+                        <li><a href="hostelListing.html" onclick="toggleMenu()">Hostel</a></li>
+                        <li><a href="messListing.html" onclick="toggleMenu()">Mess</a></li>
+                        <li><a href="#more-info" onclick="toggleMenu()">More-Info</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                        <li><a href="auth.html" onclick="toggleMenu()">Sign Up / Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="mess-details-container" class="mess-details-container">
+
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 LivingHub. All rights reserved.</p>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const messName = urlParams.get('mess');
+            if (messName) {
+                loadMessDetails(messName);
+            }
+        });
+
+        function loadMessDetails(messName) {
+            var detailsContainer = document.getElementById("mess-details-container");
+            detailsContainer.innerHTML = "";
+
+            if (messName === "yummy-food-mess") {
+                detailsContainer.innerHTML = `
+                    <h2 class="mess-title">Yummy Food Mess</h2>
+                    <div class="image-container">
+                        <img src="assets/mess1.jpg" alt="Yummy Food Mess" class="mess-image">
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Vegetarian</span>
+                        <span class="tag">Non-Vegetarian</span>
+                        <span class="tag">Breakfast</span>
+                        <span class="tag">Lunch</span>
+                        <span class="tag">Dinner</span>
+                    </div>
+                    <div class="description">
+                        <p>Yummy Food Mess is known for its delicious and hygienic meals. Our menu offers a wide variety of dishes that cater to both vegetarians and non-vegetarians. We provide breakfast, lunch, and dinner with a focus on quality and taste.</p>
+                    </div>
+                    <div class="features">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Affordable pricing</li>
+                            <li>High-quality ingredients</li>
+                            <li>Hygienic cooking environment</li>
+                            <li>Home delivery available</li>
+                        </ul>
+                    </div>
+                    <div class="menu-highlights">
+                        <h3>Menu Highlights</h3>
+                        <ul>
+                            <li>Paneer Butter Masala</li>
+                            <li>Chicken Biryani</li>
+                            <li>Fresh Fruit Salad</li>
+                            <li>Gulab Jamun</li>
+                        </ul>
+                    </div>
+                    <div class="reviews">
+                        <h3>Customer Reviews</h3>
+                        <p>"The food is amazing and always fresh. Highly recommended!" - Ravi S.</p>
+                        <p>"Great variety and taste. My go-to mess for daily meals." - Ananya M.</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Email: contact@yummyfoodmess.com</p>
+                        <p>Phone: +123 456 7890</p>
+                    </div>
+                    <section class="add-review">
+                        <h3>Add a Review</h3>
+                        <form id="review-form">
+                            <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                                <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                                <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                                <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                                <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                            </div>
+                            <button type="submit" class="btn">Submit Review</button>
+                        </form>
+                    </section>
+                `;
+                addReviewFunctionality();
+            } else if (messName === "healthy-meals-mess") {
+                detailsContainer.innerHTML = `
+                    <h2 class="mess-title">Healthy Meals Mess</h2>
+                    <div class="image-container">
+                        <img src="assets/mess2.jpg" alt="Healthy Meals Mess" class="mess-image">
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Organic Food</span>
+                        <span class="tag">Vegan Options</span>
+                        <span class="tag">Breakfast</span>
+                        <span class="tag">Lunch</span>
+                        <span class="tag">Dinner</span>
+                    </div>
+                    <div class="description">
+                        <p>Healthy Meals Mess focuses on providing nutritious and balanced meals. Our menu is designed to include organic ingredients and vegan options to ensure a healthy diet for our customers.</p>
+                    </div>
+                    <div class="features">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Organic and fresh ingredients</li>
+                            <li>Vegan and gluten-free options</li>
+                            <li>Dietary customizations</li>
+                            <li>Weekly health tips</li>
+                        </ul>
+                    </div>
+                    <div class="menu-highlights">
+                        <h3>Menu Highlights</h3>
+                        <ul>
+                            <li>Quinoa Salad</li>
+                            <li>Grilled Tofu Sandwich</li>
+                            <li>Green Smoothie</li>
+                            <li>Fruit Parfait</li>
+                        </ul>
+                    </div>
+                    <div class="reviews">
+                        <h3>Customer Reviews</h3>
+                        <p>"A perfect place for health-conscious people. The food is nutritious and tasty." - Priya K.</p>
+                        <p>"I love the vegan options. The meals are light yet filling." - Aditya R.</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Email: contact@healthymealsmess.com</p>
+                        <p>Phone: +123 456 7891</p>
+                    </div>
+                    <section class="add-review">
+                            <h3>Add a Review</h3>
+                            <form id="review-form">
+                                <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+                                <div class="star-rating">
+                                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                                </div>
+                                <button type="submit" class="btn">Submit Review</button>
+                            </form>
+                        </section>
+                    `;
+                    addReviewFunctionality();
+            } else if (messName === "quick-bites-mess") {
+                detailsContainer.innerHTML = `
+                    <h2 class="mess-title">Quick Bites Mess</h2>
+                    <div class="image-container">
+                        <img src="assets/mess3.jpg" alt="Quick Bites Mess" class="mess-image">
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Fast Service</span>
+                        <span class="tag">Snacks</span>
+                        <span class="tag">Lunch</span>
+                        <span class="tag">Dinner</span>
+                        <span class="tag">Late-night Meals</span>
+                    </div>
+                    <div class="description">
+                        <p>Quick Bites Mess is perfect for those who are always on the go. We offer a variety of quick and delicious meals, including snacks, lunch, dinner, and late-night options.</p>
+                    </div>
+                    <div class="features">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Speedy service</li>
+                            <li>Takeaway and delivery options</li>
+                            <li>Wide variety of snacks</li>
+                            <li>Late-night availability</li>
+                        </ul>
+                    </div>
+                    <div class="menu-highlights">
+                        <h3>Menu Highlights</h3>
+                        <ul>
+                            <li>Cheese Sandwich</li>
+                            <li>Chicken Wrap</li>
+                            <li>French Fries</li>
+                            <li>Chocolate Brownie</li>
+                        </ul>
+                    </div>
+                    <div class="reviews">
+                        <h3>Customer Reviews</h3>
+                        <p>"Perfect place for a quick meal. The service is really fast." - Neha P.</p>
+                        <p>"I love their late-night snacks. Always fresh and tasty." - Rahul D.</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Email: contact@quickbitesmess.com</p>
+                        <p>Phone: +123 456 7892</p>
+                    </div>
+                    <section class="add-review">
+                        <h3>Add a Review</h3>
+                        <form id="review-form">
+                            <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                                <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                                <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                                <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                                <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                            </div>
+                            <button type="submit" class="btn">Submit Review</button>
+                        </form>
+                    </section>
+                `;
+                addReviewFunctionality();
+            } else {
+                detailsContainer.innerHTML = "<p>Details not found.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

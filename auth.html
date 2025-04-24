@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication - LivingHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/LivingHub.png">
+</head>
+<body>
+    <header>
+        <!-- Navigation -->
+        <nav id="desktop-nav">
+            <div class="logo" onclick="location.href='index.html';">LivingHub</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="hostelListing.html">Hostel</a></li>
+                <li><a href="messListing.html">Mess</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <nav id="hamburger-nav">
+            <div class="logo">Living Hub</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="menu-links">
+                    <ul>
+                        <li><a href="hostelListing.html" onclick="toggleMenu()">Hostel</a></li>
+                        <li><a href="messListing.html" onclick="toggleMenu()">Mess</a></li>
+                        <li><a href="#more-info" onclick="toggleMenu()">More-Info</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+    <section id="auth-section">
+        <div id="login-form-container">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-color-1">Login</button>
+                <p>Don't have an account? <a href="#" onclick="showSignUpForm()">Sign Up</a></p>
+            </form>
+        </div>
+        <div id="signup-form-container" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Name:</label>
+                    <input type="text" id="signup-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-color-1">Sign Up</button>
+                <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+            </form>
+        </div>
+    </section>
+
+    <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Listings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/LivingHub.png">
+</head>
+<body>
+    <header>
+        <!-- Navigation -->
+        <nav id="desktop-nav">
+            <div class="logo" onclick="location.href='index.html';">LivingHub</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="hostelListing.html">Hostel</a></li>
+                <li><a href="messListing.html">Mess</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li id="auth-link"><a href="auth.html" id="auth-button">Sign Up / Login</a></li>
+            </ul>
+        </nav>
+
+        <nav id="hamburger-nav">
+            <div class="logo">Living Hub</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="menu-links">
+                    <ul>
+                        <li><a href="hostelListing.html" onclick="toggleMenu()">Hostel</a></li>
+                        <li><a href="messListing.html" onclick="toggleMenu()">Mess</a></li>
+                        <li><a href="#more-info" onclick="toggleMenu()">More-Info</a></li>
+                        <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+                        <li><a href="auth.html" onclick="toggleMenu()">Sign Up / Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    <main>
+        <section class="search-filter">
+            <div class="search-bar">
+                <input type="text" id="search-bar" onkeyup="filterMesses()" placeholder="Search messes...">
+            </div>
+        </section>
+
+        <section class="facilities-listing">
+            <!-- Mess Listing Cards -->
+            <div class="facility">
+                <img src="assets/mess1.jpg" alt="Yummy Food Mess">
+                <h3>Yummy Food Mess</h3>
+                <p>Vegetarian, Non-Vegetarian, Breakfast, Lunch, Dinner</p>
+                <button onclick="navigateToMessDetails('yummy-food-mess')">View Details</button>
+            </div>
+            <div class="facility">
+                <img src="assets/mess2.jpg" alt="Healthy Meals Mess">
+                <h3>Healthy Meals Mess</h3>
+                <p>Organic food, Vegan options, Breakfast, Lunch, Dinner</p>
+                <button onclick="navigateToMessDetails('healthy-meals-mess')">View Details</button>
+            </div>
+            <div class="facility">
+                <img src="assets/mess3.jpg" alt="Quick Bites Mess">
+                <h3>Quick Bites Mess</h3>
+                <p>Fast service, Snacks, Lunch, Dinner, Late-night meals</p>
+                <button onclick="navigateToMessDetails('quick-bites-mess')">View Details</button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LivingHub. All rights reserved.</p>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

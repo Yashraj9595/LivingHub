@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Listings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/LivingHub.png">
+</head>
+<body>
+    <header>
+        <!-- Navigation -->
+        <nav id="desktop-nav">
+            <div class="logo" onclick="location.href='index.html';">LivingHub</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="hostelListing.html">Hostel</a></li>
+                <li><a href="messListing.html">Mess</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li id="auth-link"><a href="auth.html" id="auth-button">Sign Up / Login</a></li>
+            </ul>
+        </nav>
+
+        <nav id="hamburger-nav">
+            <div class="logo">Living Hub</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="menu-links">
+                    <ul>
+                        <li><a href="hostelListing.html" onclick="toggleMenu()">Hostel</a></li>
+                        <li><a href="messListing.html" onclick="toggleMenu()">Mess</a></li>
+                        <li><a href="#more-info" onclick="toggleMenu()">More-Info</a></li>
+                        <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+                        <li><a href="auth.html" onclick="toggleMenu()">Sign Up / Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-filter">
+            <div class="search-bar">
+                <input type="text" id="search-bar" onkeyup="filterHostels()" placeholder="Search hostels...">
+            </div>
+        </section>
+
+        <section class="facilities-listing">
+            <!-- Hostel Listing Cards -->
+            <div class="facility">
+                <img src="assets/hostel1.jpg" alt="DNYANRAJ BOYS HOSTEL">
+                <h3>Dnyanraj Boys Hostel</h3>
+                <p>WiFi, 3 students per 2 rooms, mess on the ground floor</p>
+                <p></p>
+                <button onclick="navigateToHostelDetails('dnyanraj-boys-hostel')">View Details</button>
+            </div>
+            <div class="facility">
+                <img src="assets/hostel2.jpg" alt="Jai Boys Hostel">
+                <h3>Jai Boys Hostel</h3>
+                <p>WiFi, washing machine, 24 hr RO water, study table, hot water</p>
+                <p></p>
+                <button onclick="navigateToHostelDetails('jai-boys-hostel')">View Details</button>
+            </div>
+            <div class="facility">
+                <img src="assets/hostel3.jpg" alt="Rajmata Girls Hostel">
+                <h3>Rajmata Girls Hostel</h3>
+                <p>High-speed WiFi, comfortable beds, clean drinking water</p>
+                <p></p>
+                <button onclick="navigateToHostelDetails('rajmata-girls-hostel')">View Details</button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LivingHub. All rights reserved.</p>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function navigateToHostelDetails(hostelName) {
+
+            window.location.href = `hostelDetails.html?hostel=${hostelName}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - LivingHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/LivingHub.png">
+</head>
+<body>
+    <header>
+        <!-- Navigation -->
+        <nav id="desktop-nav">
+            <div class="logo" onclick="location.href='index.html';">LivingHub</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="hostelListing.html">Hostel</a></li>
+                <li><a href="messListing.html">Mess</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <nav id="hamburger-nav">
+            <div class="logo">Living Hub</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="menu-links">
+                    <ul>
+                        <li><a href="hostelListing.html" onclick="toggleMenu()">Hostel</a></li>
+                        <li><a href="messListing.html" onclick="toggleMenu()">Mess</a></li>
+                        <li><a href="#more-info" onclick="toggleMenu()">More-Info</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                        <li><a href="auth.html" onclick="toggleMenu()">Sign Up / Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+    <section id="profile-section">
+        <div id="profile-container" class="form-container">
+            <h2>Profile</h2>
+            <img src="profile.jpg" alt="Profile Image" id="profile-image">
+            <p><strong>Name:</strong> <span id="profile-name">Parimala Ahire</span></p>
+            <p><strong>Age:</strong> <span id="profile-age">25</span></p>
+            <p><strong>Dietary Preference:</strong> <span id="profile-diet">Vegetarian</span></p>
+            <p><strong>Hostel Preference:</strong> <span id="profile-hostel">Single Room</span></p>
+            <p><strong>Contact Details:</strong> <span id="profile-contact">parimalahire18@gmail.com</span></p>
+        </div>
+    </section>
+    <script src="profile.js"></script>
+</body>
+</html>

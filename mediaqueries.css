@@ -1,0 +1,91 @@
+
+@media only screen and (max-width: 920px) {
+
+    #desktop-nav {
+        display: none;
+    }
+
+    #hamburger-nav {
+        display: flex;
+    }
+
+    body {
+        font-size: 14px;
+    }
+    
+    .site-info {
+        flex-direction:column;
+        align-items: center;
+        
+    }
+    .info-text {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .site-info img { 
+        width: 80%;
+        max-width: 100vb; 
+    }
+
+    .more-info {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0 20%;
+    }
+
+    .how-it-works, .faq {
+        width: 90%;
+    }
+
+    .line {
+        display: flex; 
+    }
+    
+    .review-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    .review {
+        width: 90%; 
+        max-width: 300px; 
+        margin: 1rem auto; 
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .site-info img {
+        width: 100%;
+        max-width: unset; 
+    }
+    
+    .review {
+        width: 90%; 
+        max-width: none; 
+    }
+
+    .form-group {
+        width: 90%;
+        max-width: 300px; 
+        margin: 0 auto; 
+    }
+
+    label {
+        font-size: 14px; 
+    }
+    input, textarea {
+        font-size: 14px;
+    }
+    button[type="submit"] {
+        width: 90%; 
+        max-width: 200px; 
+        margin: 0 auto; 
+    }
+
+    .how-it-works, .faq {
+        width: 90%;
+    }
+
+}

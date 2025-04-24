@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/LivingHub.png">
+</head>
+<body>
+    <header>
+        <nav id="desktop-nav">
+            <div class="logo" onclick="location.href='index.html';">LivingHub</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="hostelListing.html">Hostel</a></li>
+                <li><a href="messListing.html">Mess</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="auth-link"><a href="auth.html" id="auth-button">Sign Up / Login</a></li>
+            </ul>
+        </nav>
+
+        <nav id="hamburger-nav">
+            <div class="logo">LivingHub</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="menu-links">
+                    <ul>
+                        <li><a href="hostelListing.html" onclick="toggleMenu()">Hostel</a></li>
+                        <li><a href="messListing.html" onclick="toggleMenu()">Mess</a></li>
+                        <li><a href="#more-info" onclick="toggleMenu()">More-Info</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                        <li><a href="auth.html" onclick="toggleMenu()">Sign Up / Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="hostel-details-container" class="hostel-details-container">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 LivingHub. All rights reserved.</p>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hostelName = urlParams.get('hostel');
+            if (hostelName) {
+                loadHostelDetails(hostelName);
+            }
+        });
+    
+        function loadHostelDetails(hostelName) {
+            var detailsContainer = document.getElementById("hostel-details-container");
+            detailsContainer.innerHTML = "";
+    
+            if (hostelName === "dnyanraj-boys-hostel") {
+                detailsContainer.innerHTML = `
+                    <h2 class="hostel-title">Dnyanraj Boys Hostel</h2>
+                    <div class="image-container">
+                        <img src="assets/hostel1.jpg" alt="Dnyanraj Boys Hostel" class="hostel-image">
+                    </div>
+                    <div class="tags">
+                        <span class="tag">WiFi</span>
+                        <span class="tag">Washing machine</span>
+                        <span class="tag">24 hr RO water</span>
+                        <span class="tag">Study table</span>
+                        <span class="tag">Hot water</span>
+                    </div>
+                    <div class="features">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>WiFi</li>
+                            <li>Washing machine</li>
+                            <li>24 hr RO water</li>
+                            <li>Study table</li>
+                            <li>Hot water</li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <p>Dnyanraj Boys Hostel offers modern facilities including WiFi, washing machine, 24-hour RO water, study tables, and hot water for students' convenience.</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Email: contact@dnyanrajboys.com</p>
+                        <p>Phone: +123 456 7890</p>
+                    </div>
+                    <section class="add-review">
+                        <h3>Add a Review</h3>
+                        <form id="review-form">
+                            <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                                <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                                <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                                <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                                <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                            </div>
+                            <button type="submit" class="btn">Submit Review</button>
+                        </form>
+                    </section>
+                `;
+            } else if (hostelName === "jai-boys-hostel") {
+                detailsContainer.innerHTML = `
+                    <h2 class="hostel-title">Jai Boys Hostel</h2>
+                    <div class="image-container">
+                        <img src="assets/hostel2.jpg" alt="Jai Boys Hostel" class="hostel-image">
+                    </div>
+                    <div class="tags">
+                        <span class="tag">WiFi</span>
+                        <span class="tag">Washing machine</span>
+                        <span class="tag">24 hr RO water</span>
+                        <span class="tag">Study table</span>
+                        <span class="tag">Hot water</span>
+                    </div>
+                    <div class="features">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>WiFi</li>
+                            <li>Washing machine</li>
+                            <li>24 hr RO water</li>
+                            <li>Study table</li>
+                            <li>Hot water</li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <p>Jai Boys Hostel provides modern facilities including WiFi, washing machine, 24-hour RO water, study tables, and hot water for students' convenience.</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Email: contact@jaiboys.com</p>
+                        <p>Phone: +123 456 7891</p>
+                    </div>
+                    <section class="add-review">
+                        <h3>Add a Review</h3>
+                        <form id="review-form">
+                            <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                                <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                                <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                                <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                                <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                            </div>
+                            <button type="submit" class="btn">Submit Review</button>
+                        </form>
+                    </section>
+                `;
+            } else if (hostelName === "rajmata-girls-hostel") {
+                detailsContainer.innerHTML = `
+                    <h2 class="hostel-title">Rajmata Girls Hostel</h2>
+                    <div class="image-container">
+                        <img src="assets/hostel3.jpg" alt="Rajmata Girls Hostel" class="hostel-image">
+                    </div>
+                    <div class="tags">
+                        <span class="tag">High-speed WiFi</span>
+                        <span class="tag">Comfortable beds</span>
+                        <span class="tag">Clean drinking water</span>
+                    </div>
+                    <div class="features">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>High-speed WiFi</li>
+                            <li>Comfortable beds</li>
+                            <li>Clean drinking water</li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <p>Rajmata Girls Hostel ensures a comfortable stay for girls with amenities like high-speed WiFi, cozy beds, and clean drinking water facilities.</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Email: contact@rajmatagirls.com</p>
+                        <p>Phone: +123 456 7892</p>
+                    </div>
+                    <section class="add-review">
+                        <h3>Add a Review</h3>
+                        <form id="review-form">
+                            <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                                <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                                <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                                <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                                <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                            </div>
+                            <button type="submit" class="btn">Submit Review</button>
+                        </form>
+                    </section>
+                `;
+            } else {
+                detailsContainer.innerHTML = "<p>Details not found.</p>";
+            }
+        }
+    </script>
+    
+
+</body>
+</html>
